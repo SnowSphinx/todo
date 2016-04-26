@@ -1,0 +1,25 @@
+<div class="grid grid-pad">
+
+
+    <div class="item_container">
+        Add
+        <input #new_todo>
+        <input type="submit" (click)="addNew(new_todo.value)">
+    </div>
+
+    <span (click)="sortByTitle()">Click to sort by title</span>
+
+
+    <div *ngFor="#todo of todos" class="col-1-4">
+
+
+        <div class="item_container"  [class.done]="todo.done">
+
+            <input type="checkbox" (change)="onChecked(todo)">
+            <input [(ngModel)]="todo.name" (change)="saveToDo()">
+            <span (click)="delete(todo)">Delete</span>
+        </div>
+    </div>
+
+</div>
+
