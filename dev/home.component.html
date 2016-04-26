@@ -15,11 +15,14 @@
 
         <div class="item_container"  [class.done]="todo.done">
 
-            <input type="checkbox" (change)="onChecked(todo)">
+            <input type="checkbox" (change)="onChecked(todo)" [checked]="todo.done" >
             <input [(ngModel)]="todo.name" (change)="saveToDo()">
             <span (click)="delete(todo)">Delete</span>
         </div>
     </div>
 
+
 </div>
+
+
 
